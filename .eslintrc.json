@@ -1,6 +1,12 @@
 {
     "extends": ["eslint:recommended", "plugin:node/recommended"],
-    "rules": {
-    }
+    "env": {
+        "node": true
+      },
+      "rules": {
+        "node/no-unsupported-features/node-builtins": ["error", {
+          "version": ">=10.12.0"
+        }]
+      }
   }
   
