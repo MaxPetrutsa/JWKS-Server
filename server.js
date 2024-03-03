@@ -1,8 +1,6 @@
-// server.js
-
 const express = require('express');
 const generateKeyPair = require('./keyGeneration');
-const jwt = require('jsonwebtoken'); // Import jsonwebtoken module
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const port = 8080;
@@ -25,7 +23,7 @@ app.get('/.well-known/jwks.json', (req, res) => {
       alg: 'RS256',
       use: 'sig',
       n: currentKeyPair.publicKey.split('\n').slice(1, -2).join(''), // Remove header and footer
-      e: 'AQAB' // Exponent (constant value for RSA)
+      e: 'AQAB'
     }]
   };
 
